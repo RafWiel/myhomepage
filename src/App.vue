@@ -1,13 +1,16 @@
 <script setup>
 //import { RouterLink, RouterView } from 'vue-router'
-//import HelloWorld from './components/HelloWorld.vue'
+import AppBar from './components/AppBar.vue'
 </script>
 
 <template>
   <v-app>
-    <v-app-bar :elevation="2"></v-app-bar>
-    <v-alert>test</v-alert>
-  </v-app>
+    <app-bar />
+    <v-main>
+      <v-container class="d-flex justify-center align-center text-h5">
+        Content
+      </v-container>
+    </v-main>
   <!-- <header>
 
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
@@ -23,12 +26,18 @@
   </header>
 
   <RouterView /> -->
+  </v-app>
 </template>
 
 <style scoped>
+
 header {
   line-height: 1.5;
   max-height: 100vh;
+}
+
+.red {
+  background-color: red;
 }
 
 .logo {
