@@ -9,6 +9,7 @@ import AppBar from './components/AppBar.vue'
     <v-main>
       <v-container class="d-flex justify-center align-center text-h5">
         Content
+        <v-icon icon="mdi-home" />
       </v-container>
     </v-main>
   <!-- <header>
