@@ -21,7 +21,7 @@
       <img
         alt="demo logo"
         class="logo ml-6 me-auto"
-        src="@/assets/demo logo.svg"
+        src="../assets/demo logo.svg"
         width="130"
         height="30" />
       <v-btn-menu variant="plain">
