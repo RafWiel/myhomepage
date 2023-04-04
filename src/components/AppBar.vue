@@ -24,11 +24,11 @@
         src="../assets/demo logo.svg"
         width="130"
         height="30" />
-      <v-btn-menu variant="plain">
+      <v-btn-menu data-testid="company" variant="plain">
         Firma
         <v-icon icon="mdi-chevron-down"></v-icon>
         <v-menu activator="parent">
-          <v-list>
+          <v-list data-testid="companyItems">
             <v-list-item
               v-for="(item, index) in companyItems"
               :key="index"

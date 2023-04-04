@@ -1,5 +1,7 @@
 import { describe, it, expect } from "vitest"
 import { createVuetify } from "vuetify"
+import { VApp } from "vuetify/components";
+import { h } from "vue";
 import * as components from "vuetify/components"
 import * as directives from "vuetify/directives"
 
@@ -7,71 +9,63 @@ import { mount } from "@vue/test-utils"
 import AppBar from "@/components/AppBar.vue"
 
 describe("AppBar", () => {
+  let wrapper;
   const vuetify = createVuetify({ components, directives })
 
-  https://stackoverflow.com/questions/72350551/combination-of-vue-3-vuetify-3-vue-test-utils-results-in-could-not-find-in
-
-  it('exists', () => {
-    let el = document.createElement("div");
-    el.setAttribute("data-app", true);
-    document.body.appendChild(el);
-
-    document.body.setAttribute('data-app', true)
-
-    const wrapper = mount(AppBar, {
+  beforeEach(() => {
+    wrapper = mount(VApp, {
+      slots: {
+        default: h(AppBar), //workaround to have component inside <v-app> tag
+      },
       global: {
         plugins: [vuetify],
       },
       props: {},
     })
-
-    expect(wrapper.exists()).toBe(true);
   });
 
-  // it("renders properly", () => {
+  // afterEach(() => {
+  //   wrapper.destroy();
+  // });
 
+  it('exists', () => {
+    expect(wrapper.exists()).toBe(true)
+  });
 
-  //   expect(wrapper.text()).toContain("Hello Vitest")
-  // })
+  it('renders menu items', () => {
+    expect(wrapper.text()).toContain('Firma')
+    expect(wrapper.text()).toContain('Oferta')
+    expect(wrapper.text()).toContain('Rozwiązania')
+    expect(wrapper.text()).toContain('Realizacje')
+  });
+
+  // it('renders submenu items', async () => {
+  //   const button = wrapper.find('[data-testid="company"]')
+
+  //   expect(button.exists()).toBe(true)
+  //   await button.trigger("click")
+  //   await wrapper.vm.$nextTick();
+
+  //   const list = wrapper.find('[data-testid="companyItems"]')
+  //   expect(list.exists()).toBe(true)
+  // });
+
+  //todo
+  //render tems
+
+  //todo
+  //logo click
+
+  //todo
+  //mail click
+
+  //todo
+  //menu click
 })
 
-// import { mount } from "@vue/test-utils";
-// import { describe, expect, it } from "vitest";
-// import AppBar from "../components/AppBar.vue"
-// import { createVuetify } from "vuetify"
-// import * as components from "vuetify/components"
-// import * as directives from "vuetify/directives"
-
-// describe('AppBar', () => {
-//   //let wrapper
-//   //let vuetify
-
-//   // beforeEach(() => {
 
 
-//   //   //document.body.setAttribute('data-app', true)
 
-//   //   // wrapper = mount(AppBar, {
-//   //   //   vuetify,
-//   //   // })
-//   // })
-
-//   // afterEach(() => {
-//   //   wrapper.destroy();
-//   // })
-
-//   it('Mounts properly', async () => {
-//     //const wrapper = mount(AppBar)
-//     const vuetify = createVuetify({ components, directives })
-
-//     document.body.setAttribute('data-app', true)
-
-//     const wrapper = mount(AppBar, {
-//       props: {},
-//       global: {
-//         plugins: [vuetify]
-//       }
-//   });
 //     // vuetify = new Vuetify()
 //     // wrapper = mount(AppBar, {
 //     //   vuetify,
