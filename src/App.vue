@@ -7,11 +7,12 @@ import AppBar from './components/AppBar.vue'
   <v-app>
     <app-bar />
     <v-main>
-      <v-container class="d-flex justify-center align-center text-h5">
-        Content
-        <v-icon icon="mdi-home" />
-      </v-container>
+      <h4 class="px-2 py-1 red">Testy AppBar</h4>
+      <h4 class="px-2 py-1 red">Layout width, sprawdz layouty na vuetify</h4>
+      <router-view :key="$route.path"/>
     </v-main>
+  </v-app>
+
   <!-- <header>
 
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
@@ -27,7 +28,7 @@ import AppBar from './components/AppBar.vue'
   </header>
 
   <RouterView /> -->
-  </v-app>
+
 </template>
 
 <style scoped>
