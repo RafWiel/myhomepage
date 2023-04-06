@@ -29,6 +29,17 @@ const vuetify = createVuetify({
       variant: 'text',
     },
   },
+  theme: {
+    themes: {
+      light: {
+        colors: {
+          background: '#F5F5F5',
+          primary: '#1867C0',
+          secondary: '#5CBBF6',
+        },
+      },
+    },
+  },
   // icons: {
   //   defaultSet: 'mdi',
   //   aliases,

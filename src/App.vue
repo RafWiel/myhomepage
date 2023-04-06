@@ -4,11 +4,10 @@ import AppBar from './components/AppBar.vue'
 </script>
 
 <template>
-  <v-app>
+  <v-app >
     <app-bar />
     <v-main>
-      <h4 class="px-2 py-1 red">Testy AppBar</h4>
-      <h4 class="px-2 py-1 red">Layout width, sprawdz layouty na vuetify</h4>
+      <!-- <h4 class="px-2 py-1 bg-yellow">Layout width, sprawdz layouty na vuetify</h4> -->
       <router-view :key="$route.path"/>
     </v-main>
   </v-app>
@@ -32,7 +31,7 @@ import AppBar from './components/AppBar.vue'
 </template>
 
 <style scoped>
-
+/*
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -97,5 +96,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
