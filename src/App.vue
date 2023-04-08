@@ -7,7 +7,7 @@ import AppBar from './components/AppBar.vue'
   <v-app >
     <app-bar />
     <v-main>
-      <!-- <h4 class="px-2 py-1 bg-yellow">Layout width, sprawdz layouty na vuetify</h4> -->
+      <h4 class="px-2 py-1 bg-yellow">ImageSlider testy</h4>
       <router-view :key="$route.path"/>
     </v-main>
   </v-app>

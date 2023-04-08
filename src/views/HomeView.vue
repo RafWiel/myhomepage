@@ -1,9 +1,5 @@
 <template>
-
-    <div class="img-container">
-      <img id="imgSlider" class="img-animation" src="../assets/home/home_1.jpg" alt="">
-    </div>
-
+    <image-slider :images="images" />
     <h3 class="container">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci.
     </h3>
@@ -17,96 +13,31 @@
 </template>
 
 <script setup>
-  import { onMounted } from 'vue'
-
-  onMounted(() => {
-    slide();
-  })
+  import ImageSlider from '../components/ImageSlider.vue'
 
   const images = new Array(
-    '../src/assets/home/home_1.jpg',
-    '../src/assets/home/home_2.jpg',
-    '../src/assets/home/home_3.jpg',
+    'home/home_1.jpg',
+    'home/home_2.jpg',
+    'home/home_3.jpg',
+    'home/home_4.jpg',
   )
 
-  let i = 0
-
-  function slide() {
-    if (i > images.length - 1) {
-      i = 0
-    }
-
-    const imgSlider = document.getElementById('imgSlider')
-    imgSlider.src = images[i]
-    i++
-
-    setTimeout(() => {
-      imgSlider.getAnimations().forEach((animation) => {
-        animation.cancel();
-        animation.play();
-      })
-
-      slide()
-    }, 3000)
-  }
 </script>
 
 
-<style>
-  .img-container {
-    height: 700px;
-    background: #e0e0e0;
-    overflow: hidden;
-  }
-
-  .img-animation {
-    animation: zoomIn 5s linear;
-    transform: scale(1.15);
-  }
-
-  @keyframes zoomIn {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.15);
-    }
-  }
-
+<style scoped>
   .container {
-    animation: transitionIn 5s;
+    animation: fadeIn 5s;
   }
 
-  @keyframes transitionIn {
+  @keyframes fadeIn {
     from {
       opacity: 0;
-      /* transform: rotateX(-90deg); */
     }
-
     to {
       opacity: 1;
-      /* transform: rotateX(0); */
     }
   }
-
-
-
-/* @media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-} */
 </style>
 
 
-<!-- <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template> -->

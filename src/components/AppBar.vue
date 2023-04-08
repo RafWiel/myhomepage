@@ -1,13 +1,3 @@
-<script setup>
-  import { useRouter } from 'vue-router'
-
-  const router = useRouter()
-
-  function navigate(route) {
-    router.push({ name: route })
-  }
-</script>
-
 <template>
   <v-app-bar fixed height="100"  flat >
     <div class="w-100 d-flex flex-row">
@@ -32,7 +22,7 @@
         <v-menu
           v-if="item.items"
           activator="parent">
-          <v-list data-testid="companyItems">
+          <v-list>
             <v-list-item
               v-for="(subItem, subIndex) in item.items"
               :key="subIndex"
@@ -53,64 +43,58 @@
   </v-app-bar>
 </template>
 
-<script>
-  export default {
-    data: () => ({
-      links: [
+<script setup>
+  import { useRouter } from 'vue-router'
+
+  const router = useRouter()
+
+  const links = [
+    {
+      title: 'Firma',
+      items: [
         {
-          title: 'Firma',
-          items: [
-            {
-              title: 'O nas',
-              route: 'about'
-            },
-            {
-              title: 'Praca',
-              route: 'jobs'
-            },
-            {
-              title: 'Kontakt',
-              route: 'contact'
-            },
-          ],
+          title: 'O nas',
+          route: 'about'
         },
         {
-          title: 'Oferta',
-          items: [
-            {
-              title: 'Usługi',
-              route: 'services'
-            },
-            {
-              title: 'Oprogramowanie',
-              route: 'software'
-            },
-            {
-              title: 'Serwis',
-              route: 'maintenance'
-            },
-          ]
+          title: 'Praca',
+          route: 'jobs'
         },
         {
-          title: 'Rozwiązania',
-          route: 'solutions'
-        },
-        {
-          title: 'Realizacje',
-          route: 'implementations'
+          title: 'Kontakt',
+          route: 'contact'
         },
       ],
-      companyItems: [
-        { title: 'O nas' },
-        { title: 'Praca' },
-        { title: 'Kontakt' },
-      ],
-      offerItems: [
-        { title: 'Usługi' },
-        { title: 'Oprogramowanie' },
-        { title: 'Serwis' },
-      ],
-    }),
+    },
+    {
+      title: 'Oferta',
+      items: [
+        {
+          title: 'Usługi',
+          route: 'services'
+        },
+        {
+          title: 'Oprogramowanie',
+          route: 'software'
+        },
+        {
+          title: 'Serwis',
+          route: 'maintenance'
+        },
+      ]
+    },
+    {
+      title: 'Rozwiązania',
+      route: 'solutions'
+    },
+    {
+      title: 'Realizacje',
+      route: 'implementations'
+    },
+  ]
+
+  function navigate(route) {
+    router.push({ name: route })
   }
 </script>
 
