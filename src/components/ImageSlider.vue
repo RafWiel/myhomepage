@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="image-container">
       <img class="image top" :src="getImageUrl(0)" alt="">
       <img class="image bottom hidden" :src="getImageUrl(1)" alt="">
     </div>
@@ -9,8 +9,10 @@
   import { onMounted, onUnmounted } from 'vue'
   //import {defineProps} from "vue";
 
+  // const props = defineProps(['images'])
   const props = defineProps({
-    images: Array
+     images: Array,
+     text: String
   })
 
   let imageIndex = 1
@@ -57,6 +59,8 @@
   }
 
   function animate(image) {
+    if (!image) return;
+
     const fadeIn = [
       { opacity: 0 },
       { opacity: 1 },
@@ -79,12 +83,13 @@
   }
 
   function getImageUrl(index) {
+    if (!props.images) return
     return new URL(`../assets/${props.images[index]}`, import.meta.url)
   }
 </script>
 
 <style scoped>
-  .container {
+  .image-container {
     height: 700px;
     background: #e0e0e0;
     overflow: hidden;

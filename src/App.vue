@@ -7,8 +7,7 @@ import AppBar from './components/AppBar.vue'
   <v-app >
     <app-bar />
     <v-main>
-      <h4 class="px-2 py-1 bg-yellow">style scoped nie dziala, container fade fotki 5s</h4>
-      <h4 class="px-2 py-1 bg-yellow">ImageSlider testy</h4>
+      <!-- <h4 class="px-2 py-1 bg-yellow">ImageSlider testy</h4> -->
       <router-view :key="$route.path"/>
     </v-main>
   </v-app>

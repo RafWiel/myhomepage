@@ -20,6 +20,8 @@
     'home/home_2.jpg',
     'home/home_3.jpg',
     'home/home_4.jpg',
+    'home/home_5.jpg',
+    'home/home_6.jpg',
   )
 
 </script>
