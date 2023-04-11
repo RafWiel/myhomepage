@@ -1,5 +1,48 @@
 <template>
-    <image-slider :images="images" message="unit" />
+    <div class="home-image-container">
+      <image-slider id="home-image" :images="images" message="unit" />
+      <div class="image-text-1">Nowoczesne systemy<br>i kompleksowe usługi</div>
+      <div class="image-text-2">Stawiając na profesjonalizm zyskaliśmy wizerunek przedsiębiorstwa rzetelnie i terminowo wykonującego powierzone nam zadania. Współpraca z naszą firmą to gwarancja sukcesu Państwa inwestycji.</div>
+      <div class="image-button">
+        <v-btn
+          class="text-white"
+          size="large"
+          router
+          to="solutions"
+          variant="flat" >
+          Rozwiązania
+        </v-btn>
+      </div>
+    </div>
+    <v-container class="cards-container">
+      <v-row no-gutters>
+        <v-col
+          cols="12"
+          sm="4">
+          <card
+            title="Projekty"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci."
+            class="ma-2"/>
+        </v-col>
+        <v-col
+          cols="12"
+          sm="4">
+          <card
+            title="Wsparcie techniczne"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci."
+            class="ma-2"/>
+        </v-col>
+        <v-col
+          cols="12"
+          sm="4">
+          <card
+            title="Serwis"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci."
+            class="ma-2"/>
+        </v-col>
+      </v-row>
+    </v-container>
+
     <h3 class="container">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci.
     </h3>
@@ -14,6 +57,7 @@
 
 <script setup>
   import ImageSlider from '../components/ImageSlider.vue'
+  import Card from '../components/Card.vue'
 
   const images = new Array(
     'home/home_1.jpg',
@@ -26,10 +70,68 @@
 
 </script>
 
+<style lang="scss" scoped>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:330,400,600,800');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
 
-<style scoped>
+  $font-family: 'Montserrat';
+  //$font-family: 'Nunito';
   .container {
     animation: fadeIn 5s;
+  }
+
+  .home-image-container {
+    position: relative;
+    width: 100%;
+    height: 700px;
+  }
+
+  #home-image {
+    position: absolute;
+    width: 100%;
+    height: 700px;
+    z-index: 0;
+  }
+
+  .image-text-1 {
+    position: absolute;
+    z-index: 1;
+    font-family: $font-family, sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 1.2em;
+    color: #f0f0f0;
+    margin: 150px 0 0 250px;
+    animation: slideRight 3s, fadeIn 3s;
+    width: 600px;
+  }
+
+  .image-text-2 {
+    position: absolute;
+    z-index: 1;
+    font-family: $font-family, sans-serif;
+    font-size: 20px;
+    line-height: 1.2em;
+    color: #d0d0d0;
+    margin: 300px 0 0 250px;
+    animation: slideLeft 3s, fadeIn 3s;
+    width: 600px;
+  }
+
+  .image-button {
+    position: absolute;
+    z-index: 1;
+    margin: 450px 0 0 250px;
+    animation: fadeIn 5s;
+  }
+
+  @keyframes slideRight {
+    from {
+      margin-left: -600px;
+    }
+    to {
+      margin-left: 250px;
+    }
   }
 
   @keyframes fadeIn {
@@ -40,6 +142,20 @@
       opacity: 1;
     }
   }
+
+  @keyframes slideLeft {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 250px;
+    }
+  }
+
+  .cards-container {
+    margin-top: -100px;
+  }
+
 </style>
 
 

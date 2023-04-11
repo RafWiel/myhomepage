@@ -7,7 +7,6 @@
 
 <script setup>
   import { onMounted, onUnmounted } from 'vue'
-  //import {defineProps} from "vue";
 
   // const props = defineProps(['images'])
   const props = defineProps({
@@ -107,6 +106,7 @@
     height: 700px;
     object-fit: cover;
     object-position: center center;
+    filter: brightness(50%);
   }
 
   .bottom {
