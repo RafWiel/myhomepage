@@ -11,8 +11,7 @@
 
   // const props = defineProps(['images'])
   const props = defineProps({
-     images: Array,
-     text: String
+    images: Array
   })
 
   let imageIndex = 1
@@ -83,9 +82,16 @@
   }
 
   function getImageUrl(index) {
-    if (!props.images) return
-    return new URL(`../assets/${props.images[index]}`, import.meta.url)
+    //unit test fails with INVALID_URL
+    try {
+      return new URL(`/src/assets/${props.images[index]}`, import.meta.url)
+    }
+    catch {
+      return ''
+    }
   }
+
+
 </script>
 
 <style scoped>

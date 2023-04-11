@@ -1,7 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest"
 import { createVuetify } from "vuetify"
-import { VApp } from "vuetify/components";
-import { h } from "vue";
 import * as components from "vuetify/components"
 import * as directives from "vuetify/directives"
 import { mount } from "@vue/test-utils"
@@ -18,16 +16,12 @@ describe("ImageSlider", () => {
   )
 
   beforeEach(() => {
-    wrapper = mount(VApp, {
-      slots: {
-        default: h(ImageSlider), //workaround to have component inside <v-app> tag
-      },
+    wrapper = mount(ImageSlider, {
       global: {
         plugins: [vuetify],
       },
       props: {
-        images,
-        text: 'test123'
+        images
       },
     })
   });
@@ -37,11 +31,7 @@ describe("ImageSlider", () => {
   });
 
   it('loads props images', () => {
-    expect(wrapper.props().images).toBe(images)
-  })
-
-  it('loads props string', () => {
-    expect(wrapper.props().text).toBe('test123')
+    expect(wrapper.props().images).toStrictEqual(images)
   })
 })
 
