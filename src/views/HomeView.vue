@@ -2,7 +2,7 @@
     <div class="home-image-container">
       <image-slider id="home-image" :images="images" message="unit" />
       <div class="image-text-1">Nowoczesne systemy<br>i kompleksowe usługi</div>
-      <div class="image-text-2">Stawiając na profesjonalizm zyskaliśmy wizerunek przedsiębiorstwa rzetelnie i terminowo wykonującego powierzone nam zadania. Współpraca z naszą firmą to gwarancja sukcesu Państwa inwestycji.</div>
+      <div class="image-text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. </div>
       <div class="image-button">
         <v-btn
           class="text-white"
@@ -20,25 +20,28 @@
           cols="12"
           sm="4">
           <card
+            imagePath="cards/projects.jpg"
             title="Projekty"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci."
-            class="ma-2"/>
+            class="ma-3"/>
         </v-col>
         <v-col
           cols="12"
           sm="4">
           <card
-            title="Wsparcie techniczne"
+            imagePath="cards/services.jpg"
+            title="Usługi"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci."
-            class="ma-2"/>
+            class="ma-3"/>
         </v-col>
         <v-col
           cols="12"
           sm="4">
           <card
+            imagePath="cards/service.jpg"
             title="Serwis"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci."
-            class="ma-2"/>
+            class="ma-3"/>
         </v-col>
       </v-row>
     </v-container>
@@ -102,7 +105,7 @@
     line-height: 1.2em;
     color: #f0f0f0;
     margin: 150px 0 0 250px;
-    animation: slideRight 3s, fadeIn 3s;
+    animation: slideRight 3s ease-out, fadeIn 3s ease-in;
     width: 600px;
   }
 
@@ -114,7 +117,7 @@
     line-height: 1.2em;
     color: #d0d0d0;
     margin: 300px 0 0 250px;
-    animation: slideLeft 3s, fadeIn 3s;
+    animation: slideLeft 3s ease-out, fadeIn 3s ease-in;
     width: 600px;
   }
 
@@ -122,7 +125,10 @@
     position: absolute;
     z-index: 1;
     margin: 450px 0 0 250px;
-    animation: fadeIn 5s;
+    animation: fadeIn 2s ease-in-out;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
   }
 
   @keyframes slideRight {
@@ -153,7 +159,17 @@
   }
 
   .cards-container {
+    animation: slideUp 3s ease-out, fadeIn 3s ease-in;
     margin-top: -100px;
+  }
+
+  @keyframes slideUp {
+    from {
+      margin-top: 500px;
+    }
+    to {
+      margin-top: -100px;
+    }
   }
 
 </style>
