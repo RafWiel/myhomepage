@@ -5,15 +5,25 @@
     </div>
     <div class="title pt-4">{{ title }}</div>
     <div class="text px-8 py-4">{{ limitedText }}</div>
-    <v-btn>Czytaj dalej</v-btn>
+    <div class="button-container">
+      <v-btn
+        @click="navigate(props.route)"
+        variant="plain"
+        style="width:100%">Czytaj dalej ></v-btn>
+    </div>
   </v-sheet>
 </template>
 
 <script setup>
+  import { useRouter } from 'vue-router'
+
+  const router = useRouter()
+
   const props = defineProps ({
     imagePath: String,
     title: String,
     text: String,
+    route: String,
   })
 
   const limitedText = props.text.length > 500 ? `${props.text.substring(0, 500)}...` : props.text
@@ -27,6 +37,10 @@
       return ''
     }
   }
+
+  function navigate(route) {
+    router.push({ name: route })
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -36,11 +50,16 @@
   $font-family: 'Montserrat';
   //$font-family: 'Nunito';
   .card-container {
-
+    height: 600px;
+    transition: border .5s, background-color .25s;
+    border: 1px solid white;
+    background-color: white;
   }
 
-
-
+  .card-container:hover {
+    border: 1px solid #4388c4;
+    background-color: #fafaff;
+  }
 
   .title {
     font-family: $font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -61,6 +80,7 @@
   .image-container {
     height: 100px;
     overflow: hidden;
+    margin: -1px -1px 0 -1px;
   }
 
   .image {
@@ -97,5 +117,12 @@
     to {
       filter: saturate(100%) opacity(1);
     }
+  }
+
+  .button-container {
+    width: 50%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>

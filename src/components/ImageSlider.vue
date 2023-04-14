@@ -1,8 +1,8 @@
 <template>
   <div class="image-container">
-      <img class="image top" :src="getImageUrl(0)" alt="">
-      <img class="image bottom hidden" :src="getImageUrl(1)" alt="">
-    </div>
+    <img class="image top" :src="getImageUrl(0)" alt="">
+    <img class="image bottom hidden" :src="getImageUrl(1)" alt="">
+  </div>
 </template>
 
 <script setup>

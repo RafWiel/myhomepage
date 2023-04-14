@@ -4,7 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import ContactView from '../views/ContactView.vue'
 import ImplementationsView from '../views/ImplementationsView.vue'
 import JobsView from '../views/JobsView.vue'
-import MaintenanceView from '../views/MaintenanceView.vue'
+import ServiceView from '../views/ServiceView.vue'
 import ServicesView from '../views/ServicesView.vue'
 import SoftwareView from '../views/SoftwareView.vue'
 import SolutionsView from '../views/SolutionsView.vue'
@@ -38,9 +38,9 @@ const router = createRouter({
       component: JobsView
     },
     {
-      path: '/maintenance',
-      name: 'maintenance',
-      component: MaintenanceView
+      path: '/service',
+      name: 'service',
+      component: ServiceView
     },
     {
       path: '/services',

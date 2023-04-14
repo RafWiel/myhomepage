@@ -79,7 +79,7 @@
         },
         {
           title: 'Serwis',
-          route: 'maintenance'
+          route: 'service'
         },
       ]
     },
