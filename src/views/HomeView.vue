@@ -52,9 +52,14 @@
     </div>
 
     <div class="panel-card bg-yellow">
-      <img src="../assets/home/home_panel_1.jpg" alt=""/>
-      <div>TYTUL po prawej</div>
-      <div>Tekst po prawej</div>
+      <div class="left-section bg-red">
+        <h1>Your main value proposition</h1>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci.</div>
+        <div>list 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div>list 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div>list 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      </div>
+      <img class="panel-image" src="../assets/home/home_main_1.jpg" alt=""/>
     </div>
 
     <h3 class="container">
@@ -192,7 +197,20 @@
   }
 
   .panel-card {
-    width: 100%;
+    width: 80%;
+    display: flex;
+    margin: auto;
+  }
+
+  .left-section {
+    width: 60%;
+  }
+
+  .panel-image {
+    width: 40%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center center;
   }
 
 </style>
