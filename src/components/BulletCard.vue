@@ -44,11 +44,9 @@
 </script>
 
 <style lang="scss" scoped>
-  @import url('https://fonts.googleapis.com/css?family=Montserrat:330,400,600,800');
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+  @import '../assets/main.css';
+  @import '../assets/keyframes.css';
 
-  $font-family: 'Montserrat';
-  //$font-family: 'Nunito';
   .card-container {
     height: 600px;
     transition: border .5s, background-color .25s;
@@ -62,7 +60,7 @@
   }
 
   .title {
-    font-family: $font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 28px;
     font-weight: 600;
     line-height: 1.2em;
@@ -99,15 +97,6 @@
   .card-container:hover img {
     filter: saturate(100%) opacity(1);
     transform: scale(1.1);
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 
   @keyframes saturate {

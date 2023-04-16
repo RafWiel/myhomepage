@@ -1,26 +1,12 @@
 <template>
-    <div class="home-image-container">
-      <image-slider id="home-image" :images="images" message="unit" />
-      <div class="image-text-1">Nowoczesne systemy<br>i kompleksowe usługi</div>
-      <div class="image-text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. </div>
-      <div class="image-button">
-        <v-btn
-          class="text-white"
-          size="large"
-          router
-          to="solutions"
-          variant="flat" >
-          Rozwiązania
-        </v-btn>
-      </div>
-    </div>
+    <main-image />
     <div class="cards-main-container">
       <v-container class="cards-container">
         <v-row no-gutters>
           <v-col
             cols="12"
             sm="4">
-            <card
+            <bullet-card
               imagePath="cards/projects.jpg"
               title="Projekty"
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci."
@@ -30,7 +16,7 @@
           <v-col
             cols="12"
             sm="4">
-            <card
+            <bullet-card
               imagePath="cards/services.jpg"
               title="Usługi"
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci."
@@ -40,7 +26,7 @@
           <v-col
             cols="12"
             sm="4">
-            <card
+            <bullet-card
               imagePath="cards/service.jpg"
               title="Serwis"
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci."
@@ -51,16 +37,7 @@
       </v-container>
     </div>
 
-    <div class="panel-card bg-yellow">
-      <div class="left-section bg-red">
-        <h1>Your main value proposition</h1>
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci.</div>
-        <div>list 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-        <div>list 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-        <div>list 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-      </div>
-      <img class="panel-image" src="../assets/home/home_main_1.jpg" alt=""/>
-    </div>
+    <main-panel-card class="mt-16"/>
 
     <h3 class="container">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. Nunc rhoncus quam volutpat neque gravida, consequat pulvinar felis blandit. In nulla turpis, laoreet non auctor eget, congue non mi. Morbi id dapibus massa, eu venenatis est. Quisque porta sem sed turpis euismod, eu scelerisque diam ultrices. Aenean et arcu ut erat mollis blandit id non magna. Quisque id congue risus, vel cursus orci.
@@ -75,105 +52,22 @@
 </template>
 
 <script setup>
-  import ImageSlider from '../components/ImageSlider.vue'
-  import Card from '../components/Card.vue'
+  import MainImage from '../components/home/MainImage.vue'
+  import BulletCard from '../components/BulletCard.vue'
+  import MainPanelCard from '../components/home/MainPanelCard.vue'
 
-  const images = new Array(
-    'home/home_1.jpg',
-    'home/home_2.jpg',
-    'home/home_3.jpg',
-    'home/home_4.jpg',
-    'home/home_5.jpg',
-    'home/home_6.jpg',
-  )
+
 
 </script>
 
 <style lang="scss" scoped>
-  @import url('https://fonts.googleapis.com/css?family=Montserrat:330,400,600,800');
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+  @import '../assets/main.css';
+  @import '../assets/keyframes.css';
 
-  $font-family: 'Montserrat';
-  //$font-family: 'Nunito';
   .container {
     animation: fadeIn 5s;
   }
 
-  .home-image-container {
-    position: relative;
-    width: 100%;
-    height: 700px;
-    z-index: 0;
-  }
-
-  #home-image {
-    position: absolute;
-    width: 100%;
-    height: 700px;
-    z-index: 0;
-  }
-
-  .image-text-1 {
-    position: absolute;
-    z-index: 1;
-    font-family: $font-family, sans-serif;
-    font-weight: 600;
-    font-size: 50px;
-    line-height: 1.2em;
-    color: #f0f0f0;
-    margin: 150px 0 0 250px;
-    animation: slideRight 3s ease-out, fadeIn 3s ease-in;
-    width: 600px;
-  }
-
-  .image-text-2 {
-    position: absolute;
-    z-index: 1;
-    font-family: $font-family, sans-serif;
-    font-size: 20px;
-    line-height: 1.2em;
-    color: #d0d0d0;
-    margin: 300px 0 0 250px;
-    animation: slideLeft 3s ease-out, fadeIn 3s ease-in;
-    width: 600px;
-  }
-
-  .image-button {
-    position: absolute;
-    z-index: 1;
-    margin: 450px 0 0 250px;
-    animation: fadeIn 2s ease-in-out;
-    animation-delay: 3s;
-    animation-fill-mode: forwards;
-    opacity: 0;
-  }
-
-  @keyframes slideRight {
-    from {
-      margin-left: -600px;
-    }
-    to {
-      margin-left: 250px;
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideLeft {
-    from {
-      margin-left: 100%;
-    }
-    to {
-      margin-left: 250px;
-    }
-  }
 
   .cards-main-container {
     width: 100%;
@@ -194,23 +88,6 @@
     to {
       margin-top: 0px;
     }
-  }
-
-  .panel-card {
-    width: 80%;
-    display: flex;
-    margin: auto;
-  }
-
-  .left-section {
-    width: 60%;
-  }
-
-  .panel-image {
-    width: 40%;
-    height: 500px;
-    object-fit: cover;
-    object-position: center center;
   }
 
 </style>

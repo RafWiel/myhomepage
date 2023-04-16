@@ -1,5 +1,8 @@
 @import './base.css';
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:330,400,600,800');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+
 /* #app {
   max-width: 1280px;
   margin: 0 auto;
