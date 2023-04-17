@@ -1,16 +1,16 @@
 <template>
-  <div class="mpc-container">
-    <div class="mpc-intersection" />
-    <div class="mpc-left-section">
-      <div class="mpc-title">Stawiamy na jakość,<br> profesjonalizm i troskę o klienta</div>
-      <div class="mpc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. <b>Ut sed euismod nunc</b>. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. </div>
-      <ul class="mpc-list">
+  <div class="mp-container">
+    <div class="mp-intersection" />
+    <div class="mp-left-section">
+      <div class="mp-title">Stawiamy na jakość,<br> profesjonalizm i troskę o klienta</div>
+      <div class="mp-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. <b>Ut sed euismod nunc</b>. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. </div>
+      <ul class="mp-list">
         <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
         <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
         <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
       </ul>
     </div>
-    <img class="mpc-image" src="../../assets/home/home_main_1.jpg" alt=""/>
+    <img class="mp-image" src="../../assets/home/home_main_1.jpg" alt=""/>
   </div>
 
 </template>
@@ -22,44 +22,44 @@
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        const title = document.querySelector('.mpc-title')
-        const text = document.querySelector('.mpc-text')
-        const list = document.querySelector('.mpc-list')
-        const image = document.querySelector('.mpc-image')
+        const title = document.querySelector('.mp-title')
+        const text = document.querySelector('.mp-text')
+        const list = document.querySelector('.mp-list')
+        const image = document.querySelector('.mp-image')
 
         if (entry.isIntersecting) {
-          title.classList.add('mpc-title-animation')
-          text.classList.add('mpc-text-animation')
-          list.classList.add('mpc-list-animation')
-          image.classList.add('mpc-image-animation')
+          title.classList.add('mp-title-animation')
+          text.classList.add('mp-text-animation')
+          list.classList.add('mp-list-animation')
+          image.classList.add('mp-image-animation')
         } else {
-          title.classList.remove('mpc-title-animation')
-          text.classList.remove('mpc-text-animation')
-          list.classList.remove('mpc-list-animation')
-          image.classList.remove('mpc-image-animation')
+          title.classList.remove('mp-title-animation')
+          text.classList.remove('mp-text-animation')
+          list.classList.remove('mp-list-animation')
+          image.classList.remove('mp-image-animation')
         }
       })
     })
 
-    observer.observe(document.querySelector('.mpc-intersection'))
+    observer.observe(document.querySelector('.mp-intersection'))
   })
 </script>
 <style lang="scss" scoped>
   @import '../../assets/keyframes.css';
 
-  .mpc-container {
+  .mp-container {
     width: 80%;
     display: flex;
     margin: auto;
   }
 
-  .mpc-left-section {
+  .mp-left-section {
     width: 60%;
     margin-right: 5%;
     overflow: hidden;
   }
 
-  .mpc-title {
+  .mp-title {
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 36px;
     font-weight: 700;
@@ -69,7 +69,7 @@
     width: 100%;
   }
 
-  .mpc-text {
+  .mp-text {
     position: absolute;
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px;
@@ -78,7 +78,7 @@
     width: 80%;
   }
 
-  .mpc-list {
+  .mp-list {
     position: absolute;
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
@@ -89,12 +89,12 @@
     list-style-image: url("../../assets/circle.svg");
   }
 
-  .mpc-list li span {
+  .mp-list li span {
     position: relative;
     left: 10px;
   }
 
-  .mpc-image {
+  .mp-image {
     width: 40%;
     height: 500px;
     object-fit: cover;
@@ -103,19 +103,19 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .mpc-title-animation {
+    .mp-title-animation {
       animation: slideRight 3s ease-out, fadeIn 3s ease-in;
     }
 
-    .mpc-text-animation {
+    .mp-text-animation {
       animation: slideUp 3s ease-out, fadeIn 3s ease-in;
     }
 
-    .mpc-list-animation {
+    .mp-list-animation {
       animation: listSlideUp 4s ease-out, fadeIn 3s ease-in;
     }
 
-    .mpc-image-animation {
+    .mp-image-animation {
       animation: fadeIn 1s ease-in;
       animation-fill-mode: forwards;
     }
@@ -147,14 +147,5 @@
       margin-top: 25%;
     }
   }
-
-  @keyframes wipe-enter {
-	0% {
-		transform: scale(0, .025);
-	}
-	50% {
-		transform: scale(1, .025);
-	}
-}
 
 </style>
