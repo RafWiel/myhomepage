@@ -1,16 +1,16 @@
 <template>
-  <div class="card-container">
-    <div class="intersection" />
-    <div class="left-section">
-      <div class="g-title">Stawiamy na jakość,<br> profesjonalizm i troskę o klienta</div>
-      <div class="g-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. <b>Ut sed euismod nunc</b>. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. </div>
-      <ul class="g-list">
+  <div class="mpc-container">
+    <div class="mpc-intersection" />
+    <div class="mpc-left-section">
+      <div class="mpc-title">Stawiamy na jakość,<br> profesjonalizm i troskę o klienta</div>
+      <div class="mpc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. <b>Ut sed euismod nunc</b>. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. </div>
+      <ul class="mpc-list">
         <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
         <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
         <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
       </ul>
     </div>
-    <img class="g-image" src="../../assets/home/home_main_1.jpg" alt=""/>
+    <img class="mpc-image" src="../../assets/home/home_main_1.jpg" alt=""/>
   </div>
 
 </template>
@@ -22,44 +22,44 @@
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        const title = document.querySelector('.g-title')
-        const text = document.querySelector('.g-text')
-        const list = document.querySelector('.g-list')
-        const image = document.querySelector('.g-image')
+        const title = document.querySelector('.mpc-title')
+        const text = document.querySelector('.mpc-text')
+        const list = document.querySelector('.mpc-list')
+        const image = document.querySelector('.mpc-image')
 
         if (entry.isIntersecting) {
-          title.classList.add('title-animation')
-          text.classList.add('text-animation')
-          list.classList.add('list-animation')
-          image.classList.add('image-animation')
+          title.classList.add('mpc-title-animation')
+          text.classList.add('mpc-text-animation')
+          list.classList.add('mpc-list-animation')
+          image.classList.add('mpc-image-animation')
         } else {
-          title.classList.remove('title-animation')
-          text.classList.remove('text-animation')
-          list.classList.remove('list-animation')
-          image.classList.remove('image-animation')
+          title.classList.remove('mpc-title-animation')
+          text.classList.remove('mpc-text-animation')
+          list.classList.remove('mpc-list-animation')
+          image.classList.remove('mpc-image-animation')
         }
       })
     })
 
-    observer.observe(document.querySelector('.intersection'))
+    observer.observe(document.querySelector('.mpc-intersection'))
   })
 </script>
 <style lang="scss" scoped>
   @import '../../assets/keyframes.css';
 
-  .card-container {
+  .mpc-container {
     width: 80%;
     display: flex;
     margin: auto;
   }
 
-  .left-section {
+  .mpc-left-section {
     width: 60%;
     margin-right: 5%;
     overflow: hidden;
   }
 
-  .g-title {
+  .mpc-title {
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 36px;
     font-weight: 700;
@@ -69,7 +69,7 @@
     width: 100%;
   }
 
-  .g-text {
+  .mpc-text {
     position: absolute;
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px;
@@ -78,7 +78,7 @@
     width: 80%;
   }
 
-  .g-list {
+  .mpc-list {
     position: absolute;
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
@@ -89,12 +89,12 @@
     list-style-image: url("../../assets/circle.svg");
   }
 
-  .g-list li span {
+  .mpc-list li span {
     position: relative;
     left: 10px;
   }
 
-  .g-image {
+  .mpc-image {
     width: 40%;
     height: 500px;
     object-fit: cover;
@@ -103,19 +103,19 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .title-animation {
+    .mpc-title-animation {
       animation: slideRight 3s ease-out, fadeIn 3s ease-in;
     }
 
-    .text-animation {
+    .mpc-text-animation {
       animation: slideUp 3s ease-out, fadeIn 3s ease-in;
     }
 
-    .list-animation {
+    .mpc-list-animation {
       animation: listSlideUp 4s ease-out, fadeIn 3s ease-in;
     }
 
-    .image-animation {
+    .mpc-image-animation {
       animation: fadeIn 1s ease-in;
       animation-fill-mode: forwards;
     }

@@ -1,11 +1,11 @@
 <template>
-  <v-sheet class="card-container">
-    <div class="image-container">
-      <img class="image" :src="getImageUrl()" alt="">
+  <v-sheet class="bc-container">
+    <div class="bc-image-container">
+      <img class="bc-image" :src="getImageUrl()" alt="">
     </div>
-    <div class="title pt-4">{{ title }}</div>
-    <div class="text px-8 py-4">{{ limitedText }}</div>
-    <div class="button-container">
+    <div class="bc-title pt-4">{{ title }}</div>
+    <div class="bc-text px-8 py-4">{{ limitedText }}</div>
+    <div class="bc-button-container">
       <v-btn
         @click="navigate(props.route)"
         variant="plain"
@@ -47,19 +47,24 @@
   @import '../assets/main.css';
   @import '../assets/keyframes.css';
 
-  .card-container {
+  .bc-container {
     height: 600px;
     transition: border .5s, background-color .25s;
     border: 1px solid white;
     background-color: white;
   }
 
-  .card-container:hover {
+  .bc-container:hover {
     border: 1px solid #4388c4;
     background-color: #fafaff;
   }
 
-  .title {
+  .bc-container:hover img {
+    filter: saturate(100%) opacity(1);
+    transform: scale(1.1);
+  }
+
+  .bc-title {
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 28px;
     font-weight: 600;
@@ -68,20 +73,20 @@
     text-align: center;
   }
 
-  .text {
+  .bc-text {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px;
     line-height: 1.2em;
     color: #808080;
   }
 
-  .image-container {
+  .bc-image-container {
     height: 100px;
     overflow: hidden;
     margin: -1px -1px 0 -1px;
   }
 
-  .image {
+  .bc-image {
     width: 100%;
     height: 100px;
     object-fit: cover;
@@ -94,11 +99,6 @@
     filter: saturate(30%) opacity(.8);
   }
 
-  .card-container:hover img {
-    filter: saturate(100%) opacity(1);
-    transform: scale(1.1);
-  }
-
   @keyframes saturate {
     from {
       filter: saturate(30%) opacity(.8);
@@ -108,7 +108,7 @@
     }
   }
 
-  .button-container {
+  .bc-button-container {
     width: 50%;
     margin-top: 20px;
     margin-left: auto;

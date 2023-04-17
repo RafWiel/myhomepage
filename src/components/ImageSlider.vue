@@ -1,7 +1,7 @@
 <template>
-  <div class="image-container">
-    <img class="image top" :src="getImageUrl(0)" alt="">
-    <img class="image bottom hidden" :src="getImageUrl(1)" alt="">
+  <div class="is-container">
+    <img class="is-image top" :src="getImageUrl(0)" alt="">
+    <img class="is-image bottom hidden" :src="getImageUrl(1)" alt="">
   </div>
 </template>
 
@@ -32,7 +32,7 @@
   })
 
   function slide() {
-    const slides = document.querySelectorAll('.image')
+    const slides = document.querySelectorAll('.is-image')
 
     topImageIndex = !topImageIndex;
 
@@ -92,13 +92,13 @@
 </script>
 
 <style scoped>
-  .image-container {
+  .is-container {
     height: 700px;
     background: #e0e0e0;
     overflow: hidden;
   }
 
-  .image {
+  .is-image {
     position: absolute;
     width: 100%;
     height: 700px;

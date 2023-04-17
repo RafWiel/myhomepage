@@ -1,9 +1,9 @@
 <template>
-  <div class="home-image-container">
-      <image-slider id="home-image" :images="images" message="unit" />
-      <div class="home-image-text-1">Nowoczesne systemy<br>i kompleksowe usługi</div>
-      <div class="home-image-text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. </div>
-      <div class="home-image-button">
+  <div class="mi-container">
+      <image-slider class="mi-image" :images="images" message="unit" />
+      <div class="mi-text-1">Nowoczesne systemy<br>i kompleksowe usługi</div>
+      <div class="mi-text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. </div>
+      <div class="mi-button">
         <v-btn
           class="text-white"
           size="large"
@@ -31,21 +31,21 @@
   @import '../../assets/main.css';
   @import '../../assets/keyframes.css';
 
-  .home-image-container {
+  .mi-container {
     position: relative;
     width: 100%;
     height: 700px;
     z-index: 0;
   }
 
-  #home-image {
+  .mi-image {
     position: absolute;
     width: 100%;
     height: 700px;
     z-index: 0;
   }
 
-  .home-image-text-1 {
+  .mi-text-1 {
     position: absolute;
     z-index: 1;
     font-family: 'Montserrat', sans-serif;
@@ -58,7 +58,7 @@
     width: 600px;
   }
 
-  .home-image-text-2 {
+  .mi-text-2 {
     position: absolute;
     z-index: 1;
     font-family: 'Montserrat', sans-serif;
@@ -70,7 +70,7 @@
     width: 600px;
   }
 
-  .home-image-button {
+  .mi-button {
     position: absolute;
     z-index: 1;
     margin: 450px 0 0 250px;
