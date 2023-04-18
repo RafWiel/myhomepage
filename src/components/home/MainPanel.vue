@@ -10,7 +10,7 @@
         <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
       </ul>
     </div>
-    <img class="mp-image" src="../../assets/home/home_main_1.jpg" alt=""/>
+    <img class="mp-image" src="../../assets/home/main_1.jpg" alt=""/>
   </div>
 
 </template>
