@@ -10,7 +10,9 @@
         <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
       </ul>
     </div>
-    <img class="mp-image" src="../../assets/home/main_1.jpg" alt=""/>
+    <div class="mp-right-section">
+      <img class="mp-image" src="../../assets/home/main_1.jpg" alt=""/>
+    </div>
   </div>
 
 </template>
@@ -94,8 +96,13 @@
     left: 10px;
   }
 
-  .mp-image {
+  .mp-right-section {
     width: 40%;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .mp-image {
     height: 500px;
     object-fit: cover;
     object-position: center center;
@@ -116,7 +123,7 @@
     }
 
     .mp-image-animation {
-      animation: fadeIn 1s ease-in;
+      animation: fadeIn 1s ease-in, scaleDown 3s ease-out;
       animation-fill-mode: forwards;
     }
   }
@@ -145,6 +152,15 @@
     }
     to {
       margin-top: 25%;
+    }
+  }
+
+  @keyframes scaleDown {
+    from {
+      transform: scale(1.2);
+    }
+    to {
+      transform: scale(1.0);
     }
   }
 

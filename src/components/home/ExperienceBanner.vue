@@ -1,24 +1,24 @@
 <template>
-  <div class="sp-container">
+  <div class="eb-container">
     <v-container >
       <v-row no-gutters v-intersect="intersect">
         <v-col
           cols="12"
           sm="4">
-          <div class="bg-text-header">{{ counter.projects.displayValue }}</div>
-          <div class="bg-text">ZREALIZOWANYCH PROJEKTÓW</div>
+          <div class="eb-text-header">{{ counter.projects.displayValue }}</div>
+          <div class="eb-text">ZREALIZOWANYCH PROJEKTÓW</div>
         </v-col>
         <v-col
           cols="12"
           sm="4">
-          <div class="bg-text-header">{{ counter.years.displayValue }}</div>
-          <div class="bg-text">LAT DOŚWIADCZENIA</div>
+          <div class="eb-text-header">{{ counter.years.displayValue }}</div>
+          <div class="eb-text">LAT DOŚWIADCZENIA</div>
         </v-col>
         <v-col
           cols="12"
           sm="4">
-          <div class="bg-text-header">{{ counter.clients.displayValue }}</div>
-          <div class="bg-text">ZADOWOLONYCH KLIENTÓW</div>
+          <div class="eb-text-header">{{ counter.clients.displayValue }}</div>
+          <div class="eb-text">ZADOWOLONYCH KLIENTÓW</div>
         </v-col>
       </v-row>
     </v-container>
@@ -28,7 +28,7 @@
   import {ref} from 'vue'
 
   const counter = {
-    isStarted: false,
+    isTriggered: false,
     steps: 100,
     projects: {
       targetValue: 1000,
@@ -48,11 +48,8 @@
   }
 
   function intersect(isIntersecting) {
-    if (isIntersecting && counter.isStarted === false) {
-      counter.isStarted = true;
-
-      console.log('run')
-
+    if (isIntersecting && counter.isTriggered === false) {
+      counter.isTriggered = true;
       increaseValues(1, 1)
     }
   }
@@ -88,22 +85,21 @@
 <style lang="scss" scoped>
   @import '../../assets/fonts.css';
 
-  .sp-container {
+  .eb-container {
     display: flex;
     width: 100%;
     height: 250px;
     justify-content: center;
     align-items: center;
     background-color: #102030;
-    //background-image: url('../../assets/home/sp_background.jpg');
-    background: url('../../assets/home/sp_background.jpg') no-repeat center center fixed;
+    background: url('../../assets/home/experience_banner.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
   }
 
-  .bg-text-header {
+  .eb-text-header {
     font-family: 'Roboto', Arial;
     font-size: 60px;
     font-weight: 700;
@@ -112,7 +108,7 @@
     text-align: center;
   }
 
-  .bg-text {
+  .eb-text {
     font-family: 'Montserrat', Arial;
     font-size: 18px;
     font-weight: 600;
@@ -120,10 +116,4 @@
     text-align: center;
   }
 
-  .center {
-    margin: auto;
-
-
-
-  }
 </style>

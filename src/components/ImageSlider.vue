@@ -14,11 +14,11 @@
   })
 
   let imageIndex = 1
-  let topImageIndex = false
+  let currentImageIndex = false
   let slideTimer = null
 
   onMounted(() => {
-    animate(document.querySelector('.image'))
+    animate(document.querySelector('.is-image'))
     setTimeout(() => { slide() }, 5000)
 
     //remove hidden from bottom image
@@ -34,20 +34,21 @@
   function slide() {
     const slides = document.querySelectorAll('.is-image')
 
-    topImageIndex = !topImageIndex;
+    //switch current image
+    currentImageIndex = !currentImageIndex;
 
     //set z-order
-    slides[+!topImageIndex].classList.remove('top')
-    slides[+!topImageIndex].classList.add('bottom')
-    slides[+topImageIndex].classList.add('top')
-    slides[+topImageIndex].classList.remove('bottom')
+    slides[+!currentImageIndex].classList.remove('top')
+    slides[+!currentImageIndex].classList.add('bottom')
+    slides[+currentImageIndex].classList.add('top')
+    slides[+currentImageIndex].classList.remove('bottom')
 
     //start animations
-    animate(slides[+topImageIndex])
+    animate(slides[+currentImageIndex])
 
     //load next image
     setTimeout(() => {
-      slides[+!topImageIndex].src = `../src/assets/${props.images[imageIndex]}`
+      slides[+!currentImageIndex].src = `../src/assets/${props.images[imageIndex]}`
     }, 1000)
 
     imageIndex++
