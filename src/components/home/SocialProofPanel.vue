@@ -8,18 +8,22 @@
       <div class="spp-title-container bg-blue-lighten-4">
         <div class="spp-title">Co mówią o nas klienci?</div>
       </div>
-      <card-slider class="spp-card-slider"/>
+      <card-slider ref="cardSlider" class="spp-card-slider"/>
     </div>
   </div>
 
 </template>
 <script setup>
-  import { onMounted } from 'vue'
+  import { onMounted, ref } from 'vue'
   import CardSlider from '../../components/CardSlider.vue'
 
-  onMounted(() => {
-    //
+  const cardSlider = ref(null)
+  const callCardSliderAnimation = () => {
+    console.log(cardSlider.value)
+    cardSlider.value.startAnimation()
+  }
 
+  onMounted(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const title = document.querySelector('.spp-title')
@@ -28,6 +32,7 @@
         if (entry.isIntersecting) {
           title.classList.add('spp-title-animation')
           image.classList.add('spp-image-animation')
+          callCardSliderAnimation()
         } else {
           title.classList.remove('spp-title-animation')
           image.classList.remove('spp-image-animation')
@@ -48,13 +53,14 @@
   }
 
   .spp-left-section {
-    width: 40%;
-    margin-right: 5%;
+    width: 30%;
+    height: 500px;
+    margin-right: 10%;
     overflow: hidden;
   }
 
   .spp-image {
-    height: 500px;
+    height: 550px;
     object-fit: cover;
     object-position: center center;
     opacity: 0;

@@ -1,30 +1,42 @@
 <template>
   <div class="cs-container bg-yellow-lighten-2">
-    <div class="cs-card top bg-red">AAA</div>
+    <div class="cs-card top hidden-top bg-red">AAA</div>
     <div class="cs-card bottom hidden bg-blue">BBB</div>
   </div>
 </template>
 
 <script setup>
-  import { onMounted, onUnmounted } from 'vue'
+  import { onUnmounted, defineExpose } from 'vue'
 
   let currentCardIndex = false
   let slideTimer = null
+  let isAnimationStarted = false
 
-  onMounted(() => {
-    animate(document.querySelector('.cs-card'))
-    setTimeout(() => { slide() }, 5000)
-
-    //remove hidden from bottom card
-    setTimeout(() => {
-      document.querySelector('.hidden').classList.remove('hidden')
-      console.log('remove-hidden')
-    }, 5000)
+  defineExpose({
+    startAnimation,
   })
 
   onUnmounted(() => {
     clearTimeout(slideTimer)
   })
+
+  function startAnimation() {
+    //run once
+    if (isAnimationStarted) return
+    isAnimationStarted = true
+
+    //show top card
+    document.querySelector('.hidden-top').classList.remove('hidden-top')
+
+    //run animation
+    animateIn(document.querySelector('.cs-card'))
+    setTimeout(() => { slide() }, 5000)
+
+    //remove hidden from bottom card
+    setTimeout(() => {
+      document.querySelector('.hidden').classList.remove('hidden')
+    }, 5000)
+  }
 
   function slide() {
     const cards = document.querySelectorAll('.cs-card')
@@ -39,12 +51,13 @@
     cards[+currentCardIndex].classList.remove('bottom')
 
     //start animations
-    animate(cards[+currentCardIndex])
+    animateOut(cards[+!currentCardIndex])
+    animateIn(cards[+currentCardIndex])
 
     slideTimer = setTimeout(() => { slide() }, 5000)
   }
 
-  function animate(card) {
+  function animateIn(card) {
     if (!card) return;
 
     const fadeIn = [
@@ -60,13 +73,28 @@
     card.animate(fadeIn, {
       duration: 1000,
       iterations: 1,
-
+      fill: 'forwards'
     })
 
     card.animate(slideLeft, {
       duration: 3000,
       iterations: 1,
-      easing: 'ease-out'
+      easing: 'ease-out',
+    })
+  }
+
+  function animateOut(card) {
+    if (!card) return;
+
+    const fadeOut = [
+      { opacity: 1 },
+      { opacity: 0 },
+    ]
+
+    card.animate(fadeOut, {
+      duration: 2000,
+      iterations: 1,
+      fill: 'forwards'
     })
   }
 </script>
@@ -95,7 +123,7 @@
     z-index: 1;
   }
 
-  .hidden {
+  .hidden, .hidden-top {
     opacity: 0;
   }
 </style>

@@ -7,8 +7,6 @@ import AppBar from './components/AppBar.vue'
   <v-app >
     <app-bar />
     <v-main>
-      <h4 class="px-2 py-1 bg-yellow">ZoomIn potrzebny container, fotki zmieniaja rozmiar na jednym boku</h4>
-      <h4 class="px-2 py-1 bg-yellow">Zacznij animacje na intersection</h4>
       <!-- <h4 class="px-2 py-1 bg-yellow">ImageSlider XS</h4>
       <h4 class="px-2 py-1 bg-yellow">Karta hover</h4>
       <h4 class="px-2 py-1 bg-yellow">Scisnij app-bar przy przewijaniu</h4> -->

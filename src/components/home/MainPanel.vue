@@ -103,7 +103,7 @@
   }
 
   .mp-image {
-    height: 500px;
+    height: 600px;
     object-fit: cover;
     object-position: center center;
     opacity: 0;
