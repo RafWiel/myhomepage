@@ -39,7 +39,7 @@
 
     <main-panel class="mt-16"/>
     <experience-banner class="mt-16"/>
-    <social-proof-panel class="mt-16"/>
+    <social-proof-panel class="mt-16 mb-16"/>
 
 
 
@@ -47,17 +47,17 @@
 </template>
 
 <script setup>
-  import MainImage from '../components/home/MainImage.vue'
-  import BulletCard from '../components/BulletCard.vue'
-  import MainPanel from '../components/home/MainPanel.vue'
-  import ExperienceBanner from '../components/home/ExperienceBanner.vue'
-  import SocialProofPanel from '../components/home/SocialProofPanel.vue'
+  import MainImage from '@/components/home/MainImage.vue'
+  import BulletCard from '@/components/home/BulletCard.vue'
+  import MainPanel from '@/components/home/MainPanel.vue'
+  import ExperienceBanner from '@/components/home/ExperienceBanner.vue'
+  import SocialProofPanel from '@/components/home/SocialProofPanel.vue'
 
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/fonts.css';
-  @import '../assets/keyframes.css';
+  @import '@/assets/fonts.css';
+  @import '@/assets/keyframes.css';
 
   .cards-main-container {
     width: 100%;

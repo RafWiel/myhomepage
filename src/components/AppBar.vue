@@ -5,7 +5,7 @@
         @click="navigate('home')"
         alt="demo logo"
         class="logo ml-6 me-auto"
-        src="../assets/demo logo.svg"
+        src="@/assets/demo logo.svg"
         style="cursor: pointer;"
         width="130"
         height="30" />

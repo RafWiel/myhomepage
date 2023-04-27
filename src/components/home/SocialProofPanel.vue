@@ -2,10 +2,10 @@
   <div class="spp-container">
     <div class="spp-intersection" />
     <div class="spp-left-section">
-      <img class="spp-image" src="../../assets/home/social_proof.jpg" alt=""/>
+      <img class="spp-image" src="@/assets/home/social_proof.jpg" alt=""/>
     </div>
     <div class="spp-right-section">
-      <div class="spp-title-container bg-blue-lighten-4">
+      <div class="spp-title-container">
         <div class="spp-title">Co mówią o nas klienci?</div>
       </div>
       <card-slider ref="cardSlider" class="spp-card-slider"/>
@@ -15,7 +15,7 @@
 </template>
 <script setup>
   import { onMounted, ref } from 'vue'
-  import CardSlider from '../../components/CardSlider.vue'
+  import CardSlider from '@/components/home/CardSlider.vue'
 
   const cardSlider = ref(null)
   const callCardSliderAnimation = () => {
@@ -44,7 +44,7 @@
   })
 </script>
 <style lang="scss" scoped>
-  @import '../../assets/keyframes.css';
+  @import '@/assets/keyframes.css';
 
   .spp-container {
     width: 80%;

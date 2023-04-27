@@ -83,7 +83,7 @@
 
 </script>
 <style lang="scss" scoped>
-  @import '../../assets/fonts.css';
+  @import '@/assets/fonts.css';
 
   .eb-container {
     display: flex;
@@ -92,7 +92,7 @@
     justify-content: center;
     align-items: center;
     background-color: #102030;
-    background: url('../../assets/home/experience_banner.jpg') no-repeat center center fixed;
+    background: url('@/assets/home/experience_banner.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

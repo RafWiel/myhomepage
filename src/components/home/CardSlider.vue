@@ -1,12 +1,17 @@
 <template>
-  <div class="cs-container bg-yellow-lighten-2">
-    <div class="cs-card top hidden-top bg-red">AAA</div>
-    <div class="cs-card bottom hidden bg-blue">BBB</div>
+  <div class="cs-container">
+    <div class="cs-card top hidden-top">
+      <client-quote-card />
+    </div>
+    <div class="cs-card bottom hidden">
+      <client-quote-card />
+    </div>
   </div>
 </template>
 
 <script setup>
-  import { onUnmounted, defineExpose } from 'vue'
+  import { onUnmounted } from 'vue'
+  import ClientQuoteCard from '@/components/home/ClientQuoteCard.vue'
 
   let currentCardIndex = false
   let slideTimer = null
@@ -30,12 +35,12 @@
 
     //run animation
     animateIn(document.querySelector('.cs-card'))
-    setTimeout(() => { slide() }, 5000)
+    setTimeout(() => { slide() }, 7000)
 
     //remove hidden from bottom card
     setTimeout(() => {
       document.querySelector('.hidden').classList.remove('hidden')
-    }, 5000)
+    }, 7000)
   }
 
   function slide() {
@@ -54,7 +59,7 @@
     animateOut(cards[+!currentCardIndex])
     animateIn(cards[+currentCardIndex])
 
-    slideTimer = setTimeout(() => { slide() }, 5000)
+    slideTimer = setTimeout(() => { slide() }, 7000)
   }
 
   function animateIn(card) {
@@ -111,7 +116,7 @@
 
   .cs-card {
     position: absolute;
-    width: 50%;
+    width: 70%;
     height: 80%;
   }
 

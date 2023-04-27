@@ -16,7 +16,7 @@
     </div>
 </template>
 <script setup>
-  import ImageSlider from '../../components/ImageSlider.vue'
+  import ImageSlider from '@/components/home/ImageSlider.vue'
 
   const images = new Array(
     'home/home_1.jpg',
@@ -28,8 +28,8 @@
   )
 </script>
 <style scoped>
-  @import '../../assets/fonts.css';
-  @import '../../assets/keyframes.css';
+  @import '@/assets/fonts.css';
+  @import '@/assets/keyframes.css';
 
   .mi-container {
     position: relative;

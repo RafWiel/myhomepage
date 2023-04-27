@@ -44,8 +44,8 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/fonts.css';
-  @import '../assets/keyframes.css';
+  @import '@/assets/fonts.css';
+  @import '@/assets/keyframes.css';
 
   .bc-container {
     height: 600px;

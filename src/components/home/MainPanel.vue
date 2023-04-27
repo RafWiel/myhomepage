@@ -11,7 +11,7 @@
       </ul>
     </div>
     <div class="mp-right-section">
-      <img class="mp-image" src="../../assets/home/main_1.jpg" alt=""/>
+      <img class="mp-image" src="@/assets/home/main_1.jpg" alt=""/>
     </div>
   </div>
 
@@ -47,7 +47,7 @@
   })
 </script>
 <style lang="scss" scoped>
-  @import '../../assets/keyframes.css';
+  @import '@/assets/keyframes.css';
 
   .mp-container {
     width: 80%;
@@ -88,7 +88,7 @@
     color: #405050;
     margin: 25% 10% 0 10%;
     width: 80%;
-    list-style-image: url("../../assets/circle.svg");
+    list-style-image: url("@/assets/circle.svg");
   }
 
   .mp-list li span {
