@@ -1,17 +1,14 @@
-<script setup>
-//import { RouterLink, RouterView } from 'vue-router'
-import AppBar from './components/AppBar.vue'
-</script>
-
 <template>
   <v-app >
     <app-bar />
     <v-main>
+      <h4 class="px-2 py-1 bg-yellow">Polityka prywatności</h4>
       <!-- <h4 class="px-2 py-1 bg-yellow">ImageSlider XS</h4>
-      <h4 class="px-2 py-1 bg-yellow">Karta hover</h4>
       <h4 class="px-2 py-1 bg-yellow">Scisnij app-bar przy przewijaniu</h4> -->
       <router-view :key="$route.path"/>
+      <app-footer />
     </v-main>
+
   </v-app>
 
   <!-- <header>
@@ -31,6 +28,12 @@ import AppBar from './components/AppBar.vue'
   <RouterView /> -->
 
 </template>
+
+<script setup>
+//import { RouterLink, RouterView } from 'vue-router'
+import AppBar from '@/components/AppBar.vue'
+import AppFooter from '@/components/AppFooter.vue'
+</script>
 
 <style scoped>
 /*

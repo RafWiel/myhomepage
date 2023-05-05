@@ -4,7 +4,7 @@
       <img
         @click="navigate('home')"
         alt="demo logo"
-        class="logo ml-6 me-auto"
+        class="ml-6 me-auto"
         src="@/assets/demo logo.svg"
         style="cursor: pointer;"
         width="130"
