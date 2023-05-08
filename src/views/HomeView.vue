@@ -56,7 +56,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '@/assets/fonts.css';
   @import '@/assets/keyframes.css';
 
   .cards-main-container {

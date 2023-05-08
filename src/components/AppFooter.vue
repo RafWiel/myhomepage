@@ -32,7 +32,7 @@
     </div>
     <div class="ft-right-section">
       <v-icon icon="mdi-chevron-right" color="primary" />
-      <a @click="navigate('software')" href="javascript: void(0)">Polityka prywatności</a>
+      <a @click="navigate('privacyPolicy')" href="javascript: void(0)">Polityka prywatności</a>
 
     </div>
   </div>

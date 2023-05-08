@@ -2,7 +2,6 @@
   <v-app >
     <app-bar />
     <v-main>
-      <h4 class="px-2 py-1 bg-yellow">Polityka prywatności</h4>
       <!-- <h4 class="px-2 py-1 bg-yellow">ImageSlider XS</h4>
       <h4 class="px-2 py-1 bg-yellow">Scisnij app-bar przy przewijaniu</h4> -->
       <router-view :key="$route.path"/>

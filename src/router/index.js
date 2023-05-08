@@ -57,6 +57,11 @@ const router = createRouter({
       name: 'solutions',
       component: SolutionsView
     },
+    {
+      path: '/privacy-policy',
+      name: 'privacyPolicy',
+      component: () => import('../views/PrivacyPolicyView.vue')
+    }
     // {
     //   path: '/about',
     //   name: 'about',
@@ -65,7 +70,15 @@ const router = createRouter({
     //   // which is lazy-loaded when the route is visited.
     //   component: () => import('../views/AboutView.vue')
     // }
-  ]
+  ],
+  scrollBehavior() {
+    // always scroll to top
+    return {
+      top: 0,
+      // behavior: 'smooth'
+    }
+  },
+
 })
 
 export default router
