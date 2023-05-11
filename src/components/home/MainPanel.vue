@@ -1,20 +1,20 @@
 <template>
-  <div class="mp-container">
-    <div class="mp-intersection" />
-    <div class="mp-left-section">
-      <div class="mp-title">Stawiamy na jakość,<br> profesjonalizm i troskę o klienta</div>
-      <div class="mp-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. <b>Ut sed euismod nunc</b>. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. </div>
-      <ul class="mp-list">
-        <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
-        <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
-        <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
-      </ul>
-    </div>
-    <div class="mp-right-section">
-      <img class="mp-image" src="@/assets/home/main_1.jpg" alt=""/>
+  <div>
+    <div class="mp-container mp-intersection">
+      <div class="mp-left-section bg-blue-lighten-4">
+        <div class="mp-title">Stawiamy na jakość,<br> profesjonalizm i troskę o klienta</div>
+        <div class="mp-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. <b>Ut sed euismod nunc</b>. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. </div>
+        <ul class="mp-list">
+          <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
+          <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
+          <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
+        </ul>
+      </div>
+      <div class="mp-right-section">
+        <img class="mp-image" src="@/assets/home/main_1.jpg" alt=""/>
+      </div>
     </div>
   </div>
-
 </template>
 <script setup>
   import { onMounted } from 'vue'
@@ -49,15 +49,21 @@
 <style lang="scss" scoped>
   @import '@/assets/keyframes.css';
 
+  :root {
+    --list-slide-up: 25%;
+  }
+
   .mp-container {
     width: 80%;
     display: flex;
+    flex-wrap: no-wrap;
     margin: auto;
   }
 
   .mp-left-section {
     width: 60%;
     margin-right: 5%;
+    height: 500px;
     overflow: hidden;
   }
 
@@ -89,6 +95,7 @@
     margin: 25% 10% 0 10%;
     width: 80%;
     list-style-image: url("@/assets/circle.svg");
+    opacity: 0;
   }
 
   .mp-list li span {
@@ -120,6 +127,8 @@
 
     .mp-list-animation {
       animation: listSlideUp 4s ease-out, fadeIn 3s ease-in;
+      animation-delay: .5s;
+      animation-fill-mode: forwards;
     }
 
     .mp-image-animation {
@@ -151,7 +160,7 @@
       margin-top: 100%;
     }
     to {
-      margin-top: 25%;
+      margin-top: --list-slide-up;
     }
   }
 
@@ -161,6 +170,46 @@
     }
     to {
       transform: scale(1.0);
+    }
+  }
+
+  @media (max-width: 600px) {
+    :root {
+      --list-slide-up: 55%;
+    }
+
+    .mp-container {
+      width: 100%;
+      flex-wrap: wrap-reverse;
+    }
+
+    .mp-left-section {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    .mp-right-section {
+      width: 100%;
+      height: 400px;
+    }
+
+    .mp-image {
+      height: 500px;
+    }
+
+    .mp-title {
+      font-size: 26px;
+    }
+
+    .mp-text {
+      font-size: 16px;
+      margin: 5% 7% 0 7%;
+    }
+
+    .mp-list {
+      font-size: 12px;
+      margin: 55% 7% 0 7%;
+      width: 100%;
     }
   }
 

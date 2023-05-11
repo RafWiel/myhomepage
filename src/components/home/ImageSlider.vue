@@ -119,4 +119,10 @@
   .hidden {
     opacity: 0;
   }
+
+  @media (max-width: 600px) {
+    .is-container, .is-image {
+      height: 400px;
+    }
+  }
 </style>

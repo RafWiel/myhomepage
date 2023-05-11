@@ -17,19 +17,40 @@
 </template>
 <script setup>
   import ImageSlider from '@/components/home/ImageSlider.vue'
+  import { computed } from 'vue'
+  import { useDisplay } from 'vuetify'
 
-  const images = new Array(
-    'home/home_1.jpg',
-    'home/home_2.jpg',
-    'home/home_3.jpg',
-    'home/home_4.jpg',
-    'home/home_5.jpg',
-    'home/home_6.jpg',
-  )
+  const {name } = useDisplay();
+
+  const images = computed(() => {
+    if (name.value == 'xs') {
+      return new Array(
+        'home/home_xs_1.jpg',
+        'home/home_xs_2.jpg',
+        'home/home_xs_3.jpg',
+        'home/home_xs_4.jpg',
+        'home/home_xs_5.jpg',
+        'home/home_xs_6.jpg',
+      )
+    }
+
+    return new Array(
+      'home/home_1.jpg',
+      'home/home_2.jpg',
+      'home/home_3.jpg',
+      'home/home_4.jpg',
+      'home/home_5.jpg',
+      'home/home_6.jpg',
+    )
+  })
 </script>
 <style scoped>
   @import '@/assets/fonts.css';
   @import '@/assets/keyframes.css';
+
+  :root {
+    --slide-stop: 250px;
+  }
 
   .mi-container {
     position: relative;
@@ -80,12 +101,39 @@
     opacity: 0;
   }
 
+  @media (max-width: 600px) {
+    :root {
+      --slide-stop: 50px;
+    }
+
+    .mi-container, .mi-image {
+      height: 400px;
+    }
+
+    .mi-text-1 {
+      font-size: 30px;
+      line-height: 1.2em;
+      margin: 40px 0 0 50px;
+    }
+
+    .mi-text-2 {
+      font-size: 18px;
+      line-height: 1.2em;
+      margin: 130px 0 0 50px;
+      width: 350px;
+    }
+
+    .mi-button {
+      margin: 280px 0 0 50px;
+    }
+  }
+
   @keyframes slideLeft {
     from {
       margin-left: 100%;
     }
     to {
-      margin-left: 250px;
+      margin-left: --slide-stop;
     }
   }
 
@@ -94,7 +142,7 @@
       margin-left: -600px;
     }
     to {
-      margin-left: 250px;
+      margin-left: --slide-stop;
     }
   }
 

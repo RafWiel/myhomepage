@@ -5,7 +5,7 @@
       style="cursor: pointer;"
       alt="demo logo"
       class="logo"
-      src="@/assets/demo logo.svg"
+      src="@/assets/demo-logo.svg"
       width="130"
       height="30" />
     <div class="ft-mid-section">

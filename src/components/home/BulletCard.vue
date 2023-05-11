@@ -91,12 +91,15 @@
     height: 100px;
     object-fit: cover;
     object-position: center center;
-    // animation: fadeIn 2s ease-in-out;
-    // animation-delay: 1s;
-    // animation-fill-mode: forwards;
-    // opacity: 0;
     transition: transform .5s, filter .5s ease-in-out;
     filter: saturate(30%) opacity(.8);
+  }
+
+  .bc-button-container {
+    width: 50%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @keyframes saturate {
@@ -108,10 +111,18 @@
     }
   }
 
-  .bc-button-container {
-    width: 50%;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+  @media (max-width: 600px) {
+    .bc-container {
+      height: 500px;
+    }
+    .bc-title {
+      font-size: 20px;
+    }
+
+    .bc-text {
+      font-size: 17px;
+    }
   }
+
+
 </style>
