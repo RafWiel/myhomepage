@@ -44,12 +44,12 @@
     )
   })
 </script>
-<style scoped>
+<style lang="scss" scoped>
   @import '@/assets/fonts.css';
   @import '@/assets/keyframes.css';
 
   :root {
-    --slide-stop: 250px;
+    --slide-stop: 15%;
   }
 
   .mi-container {
@@ -70,40 +70,56 @@
     position: absolute;
     z-index: 1;
     font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em;
     font-weight: 600;
-    font-size: 50px;
     line-height: 1.2em;
     color: #f0f0f0;
-    margin: 150px 0 0 250px;
+    margin: 150px 0 0 15%;
+    width: 70%;
+    height: 2.5em;
+    overflow: hidden;
     animation: slideRight 3s ease-out, fadeIn 3s ease-in;
-    width: 600px;
   }
 
   .mi-text-2 {
     position: absolute;
     z-index: 1;
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 1.4em;
     line-height: 1.2em;
     color: #d0d0d0;
-    margin: 300px 0 0 250px;
+    margin: 300px 0 0 15%;
+    width: 70%;
+    height: 5em;
+    overflow: hidden;
     animation: slideLeft 3s ease-out, fadeIn 3s ease-in;
-    width: 600px;
   }
 
   .mi-button {
     position: absolute;
     z-index: 1;
-    margin: 450px 0 0 250px;
+    margin: 450px 0 0 15%;
     animation: fadeIn 2s ease-in-out;
     animation-delay: 3s;
     animation-fill-mode: forwards;
     opacity: 0;
   }
 
+  @media (min-width: 1800px) {
+    .mi-text-2 {
+      width: 30%;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1800px) {
+    .mi-text-2 {
+      width: 50%;
+    }
+  }
+
   @media (max-width: 600px) {
     :root {
-      --slide-stop: 50px;
+      --slide-stop: 5%;
     }
 
     .mi-container, .mi-image {
@@ -111,20 +127,21 @@
     }
 
     .mi-text-1 {
-      font-size: 30px;
-      line-height: 1.2em;
-      margin: 40px 0 0 50px;
+      font-size: 1.8em;
+      margin: 40px 0 0 5%;
+      width: 90%;
     }
 
     .mi-text-2 {
       font-size: 18px;
       line-height: 1.2em;
-      margin: 130px 0 0 50px;
-      width: 350px;
+      margin: 130px 0 0 5%;
+      width: 90%;
+      height: 7.2em;
     }
 
     .mi-button {
-      margin: 280px 0 0 50px;
+      margin: 280px 0 0 5%;
     }
   }
 

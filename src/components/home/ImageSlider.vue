@@ -48,7 +48,8 @@
 
     //load next image
     setTimeout(() => {
-      slides[+!currentImageIndex].src = `../src/assets/${props.images[imageIndex]}`
+      slides[+!currentImageIndex].src = new URL(`/src/assets/${props.images[imageIndex]}`, import.meta.url)
+
     }, 1000)
 
     imageIndex++
