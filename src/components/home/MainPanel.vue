@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mp-container mp-intersection">
-      <div class="mp-left-section bg-blue-lighten-4">
+      <div class="mp-left-section">
         <div class="mp-title">Stawiamy na jakość,<br> profesjonalizm i troskę o klienta</div>
         <div class="mp-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. <b>Ut sed euismod nunc</b>. Mauris dictum imperdiet nunc, nec sagittis felis rutrum sit amet. </div>
         <ul class="mp-list">
@@ -62,7 +62,6 @@
 
   .mp-left-section {
     width: 60%;
-    margin-right: 5%;
     height: 500px;
     overflow: hidden;
   }
@@ -74,6 +73,8 @@
     color: #203040;
     text-align: center;
     margin-top: 7%;
+    padding-left: 5%;
+    padding-right: 5%;
     width: 100%;
   }
 
@@ -92,7 +93,7 @@
     font-size: 14px;
     list-style-position: inside;
     color: #405050;
-    margin: 25% 10% 0 10%;
+    margin: 20vh 10% 0 10%;
     width: 80%;
     list-style-image: url("@/assets/circle.svg");
     opacity: 0;
@@ -114,6 +115,75 @@
     object-fit: cover;
     object-position: center center;
     opacity: 0;
+  }
+
+  @media (max-width: 1280px) {
+    .mp-container {
+      width: 100%;
+    }
+
+    .mp-title {
+      font-size: 2.1em;
+    }
+
+    .mp-list {
+      margin: 25vh 10% 0 10%;
+    }
+  }
+
+  @media (max-width: 960px) {
+    :root {
+      --list-slide-up: 55%;
+    }
+
+    .mp-container {
+      width: 100%;
+      flex-wrap: wrap-reverse;
+    }
+
+    .mp-left-section {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    .mp-right-section {
+      width: 100%;
+      height: 500px;
+    }
+
+    .mp-image {
+      width: 100%;
+    }
+
+    .mp-title {
+      font-size: 2em;
+    }
+
+    .mp-text {
+      font-size: 1.2em;
+      margin: 5% 7% 0 7%;
+    }
+
+    .mp-list {
+      font-size: 1em;
+      margin: 25vh 7% 0 7%;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .mp-right-section {
+      width: 100%;
+      height: 400px;
+    }
+
+    .mp-text {
+      font-size: 1.05em;
+    }
+
+    .mp-list {
+      font-size: 0.8em;
+    }
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -170,46 +240,6 @@
     }
     to {
       transform: scale(1.0);
-    }
-  }
-
-  @media (max-width: 600px) {
-    :root {
-      --list-slide-up: 55%;
-    }
-
-    .mp-container {
-      width: 100%;
-      flex-wrap: wrap-reverse;
-    }
-
-    .mp-left-section {
-      width: 100%;
-      margin-right: 0;
-    }
-
-    .mp-right-section {
-      width: 100%;
-      height: 400px;
-    }
-
-    .mp-image {
-      height: 500px;
-    }
-
-    .mp-title {
-      font-size: 26px;
-    }
-
-    .mp-text {
-      font-size: 16px;
-      margin: 5% 7% 0 7%;
-    }
-
-    .mp-list {
-      font-size: 12px;
-      margin: 55% 7% 0 7%;
-      width: 100%;
     }
   }
 

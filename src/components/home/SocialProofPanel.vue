@@ -49,6 +49,7 @@
   .spp-container {
     width: 80%;
     display: flex;
+    flex-wrap: no-wrap;
     margin: auto;
   }
 
@@ -74,7 +75,7 @@
 
   .spp-title-container {
     overflow: hidden;
-    height: 25%;
+    height: 30%;
   }
 
   .spp-title {
@@ -83,26 +84,56 @@
     font-weight: 700;
     color: #203040;
     text-align: center;
-    margin-top: 7%;
+    margin-top: 5vh;
     width: 100%;
   }
 
   .spp-card-slider {
     overflow: hidden;
-    height: 75%;
+    height: 70%;
+  }
+
+  @media (max-width: 1280px) {
+    .spp-container {
+      width: 100%;
+    }
+
+    .spp-left-section {
+      width: 50%;
+      margin-right: 0;
+    }
+
+    .spp-right-section {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .spp-container {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .spp-left-section {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    .spp-right-section {
+      width: 100%;
+    }
+    .spp-title {
+      font-size: 2em;
+    }
+
+    .spp-image {
+      width: 100%;
+    }
   }
 
   @media (prefers-reduced-motion: no-preference) {
     .spp-title-animation {
       animation: slideDown 3s ease-out, fadeIn 3s ease-in;
-    }
-
-    .spp-text-animation {
-      animation: slideUp 3s ease-out, fadeIn 3s ease-in;
-    }
-
-    .spp-list-animation {
-      animation: listSlideUp 4s ease-out, fadeIn 3s ease-in;
     }
 
     .spp-image-animation {
@@ -111,39 +142,12 @@
     }
   }
 
-  @keyframes slideRight {
-    from {
-      margin-left: -150%;
-    }
-    to {
-      margin-left: 0px;
-    }
-  }
-
   @keyframes slideDown {
     from {
-      margin-top: -10%;
+      margin-top: -10vh;
     }
     to {
-      margin-top: 7%;
-    }
-  }
-
-  @keyframes slideUp {
-    from {
-      margin-top: 100%;
-    }
-    to {
-      margin-top: 5%;
-    }
-  }
-
-  @keyframes listSlideUp {
-    from {
-      margin-top: 100%;
-    }
-    to {
-      margin-top: 25%;
+      margin-top: 5vh;
     }
   }
 

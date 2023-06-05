@@ -1,7 +1,7 @@
 <template>
   <div class="mi-container">
       <image-slider class="mi-image" :images="images" message="unit" />
-      <div class="mi-text-1">Nowoczesne systemy<br>i kompleksowe usługi</div>
+      <div class="mi-text-1">{{ displaySize }} Nowoczesne systemy<br>i kompleksowe usługi</div>
       <div class="mi-text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim feugiat eros a eleifend. Praesent tincidunt lacus ornare, efficitur sem sed, fringilla odio. Ut sed euismod nunc. </div>
       <div class="mi-button">
         <v-btn
@@ -20,10 +20,12 @@
   import { computed } from 'vue'
   import { useDisplay } from 'vuetify'
 
-  const {name } = useDisplay();
+  const { name } = useDisplay();
 
   const images = computed(() => {
-    if (name.value == 'xs') {
+    if (name.value == 'xs'
+    || name.value == 'sm'
+    || name.value == 'md') {
       return new Array(
         'home/home_xs_1.jpg',
         'home/home_xs_2.jpg',
@@ -43,6 +45,8 @@
       'home/home_6.jpg',
     )
   })
+
+  const displaySize = computed(() => name.value)
 </script>
 <style lang="scss" scoped>
   @import '@/assets/fonts.css';
@@ -114,6 +118,15 @@
   @media (min-width: 1024px) and (max-width: 1800px) {
     .mi-text-2 {
       width: 50%;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .mi-text-1 {
+      font-size: 2.5em;
+    }
+    .mi-text-2 {
+      width: 75%;
     }
   }
 

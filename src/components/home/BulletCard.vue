@@ -111,6 +111,18 @@
     }
   }
 
+  @media (max-width: 1280px) {
+    .bc-container {
+      height: 700px;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .bc-container {
+      height: 400px;
+    }
+  }
+
   @media (max-width: 600px) {
     .bc-container {
       height: 500px;
@@ -123,6 +135,5 @@
       font-size: 17px;
     }
   }
-
 
 </style>

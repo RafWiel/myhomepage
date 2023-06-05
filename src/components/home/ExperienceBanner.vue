@@ -116,4 +116,10 @@
     text-align: center;
   }
 
+  @media (max-width: 600px) {
+    .eb-container {
+      height: 400px;
+    }
+  }
+
 </style>

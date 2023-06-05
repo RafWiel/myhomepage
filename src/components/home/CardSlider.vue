@@ -117,7 +117,8 @@
   .cs-card {
     position: absolute;
     width: 70%;
-    height: 80%;
+    height: 40vh;
+    padding-bottom: 5vh;
   }
 
   .bottom {
@@ -130,5 +131,17 @@
 
   .hidden, .hidden-top {
     opacity: 0;
+  }
+
+  @media (max-width: 1280px) {
+    .cs-card {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .cs-card {
+      padding-bottom: 0;
+    }
   }
 </style>

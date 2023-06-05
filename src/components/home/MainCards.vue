@@ -1,10 +1,12 @@
 <template>
   <div class="mc-main-container">
-    <v-container class="mc-container">
+    <v-container
+      :fluid = "mdAndDown"
+      class="mc-container">
       <v-row no-gutters>
         <v-col
           cols="12"
-          sm="4">
+          md="4">
           <bullet-card
             imagePath="cards/projects.jpg"
             title="Projekty"
@@ -14,7 +16,7 @@
         </v-col>
         <v-col
           cols="12"
-          sm="4">
+          md="4">
           <bullet-card
             imagePath="cards/services.jpg"
             title="Usługi"
@@ -24,7 +26,7 @@
         </v-col>
         <v-col
           cols="12"
-          sm="4">
+          md="4">
           <bullet-card
             imagePath="cards/service.jpg"
             title="Serwis"
@@ -38,12 +40,15 @@
 </template>
 <script setup>
   import BulletCard from '@/components/home/BulletCard.vue'
+
+  import { useDisplay } from 'vuetify'
+
+  const { mdAndDown } = useDisplay()
 </script>
 <style lang="scss" scoped>
   @import '@/assets/keyframes.css';
   .mc-main-container {
     width: 100%;
-    // height: 650px;
     overflow: hidden;
     margin-top: -100px;
     z-index: 1;
